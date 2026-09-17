@@ -1,0 +1,38 @@
+// Pau's personal collection data.
+// Keep this file light: catalog metadata and remote imagery live in catalog.js.
+// Unknown acquisition details are null on purpose; the UI hides fields that have not been recorded.
+window.POP_COLLECTION = [
+  { catalogId: "ghost-panther-860", status: "owned", shelfOrder: 1, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "endeavor-785", status: "owned", shelfOrder: 2, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "yuta-2322", status: "owned", shelfOrder: 3, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "rocket-megaman", status: "owned", shelfOrder: 4, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "vegeta-10", status: "owned", shelfOrder: 5, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "thor-mighty-2pack", status: "owned", shelfOrder: 6, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "naruto-71", status: "owned", shelfOrder: 7, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "sasuke-72", status: "owned", shelfOrder: 8, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "kurama-73", status: "owned", shelfOrder: 9, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "selina-281", status: "owned", shelfOrder: 10, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "sonic-283", status: "owned", shelfOrder: 11, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "mando-child-380", status: "owned", shelfOrder: 12, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "goku-386", status: "owned", shelfOrder: 13, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "batman-397", status: "owned", shelfOrder: 14, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "ronin-502", status: "owned", shelfOrder: 15, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "peely-566", status: "owned", shelfOrder: 16, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "frozen-raven-567", status: "owned", shelfOrder: 17, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "wild-card-570", status: "owned", shelfOrder: 18, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "meowscles-639", status: "owned", shelfOrder: 19, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "iron-man-649", status: "owned", shelfOrder: 20, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "thor-650", status: "owned", shelfOrder: 21, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "doctor-strange-651", status: "owned", shelfOrder: 22, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "naruto-727", status: "owned", shelfOrder: 23, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "gaara-728", status: "owned", shelfOrder: 24, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "orochimaru-729", status: "owned", shelfOrder: 25, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "tsunade-730", status: "owned", shelfOrder: 26, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "chapulin-752", status: "owned", shelfOrder: 27, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "nezuko-868", status: "owned", shelfOrder: 28, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "shikamaru-933", status: "owned", shelfOrder: 29, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "bomb-2349", status: "owned", shelfOrder: 30, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "deadpool-1583", status: "owned", shelfOrder: 31, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "spiderman-1586", status: "owned", shelfOrder: 32, acquiredAt: null, acquisition: null, giftedBy: null, notes: null },
+  { catalogId: "jonathan-2265", status: "owned", shelfOrder: 33, acquiredAt: null, acquisition: null, giftedBy: null, notes: null }
+];

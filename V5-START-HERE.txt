@@ -1,0 +1,176 @@
+FUNKO PAU — VERSION 5.8.2
+
+QUICK TEST
+1. Extract this ZIP. index.html is at the root (no parent folder).
+2. Add your existing assets/ folder. No avatar images are shipped.
+3. Open index.html, or publish these files on your existing GitHub Pages site.
+4. Click the small outline star (✧) beside ES / EN.
+5. Initial PIN: 2026. Change it in editor-config.js if desired.
+6. Click Link contributor directly on a figure card.
+   Or open Contributors > Link figures to select multiple gifts for a person.
+   The contributor manager also has Link figures beside each person.
+7. Choose Gift, select Lehky (or another contributor), then Save changes.
+8. Open Contributors: the ranking previews your draft immediately.
+9. Finish > Download update. Send the downloaded ZIP using your existing
+   email/messaging app, or collect it from Pau's device.
+
+This is a convenience PIN, not secure authentication. All code is public.
+Editing changes only this browser's draft, never the repository or live site.
+No account, backend, subscription, email API, build tool or package install.
+
+PRUEBA RÁPIDA
+1. Extrae el ZIP y añade tu carpeta assets/ habitual.
+2. Abre index.html o publica los archivos en GitHub Pages.
+3. Pulsa la estrella (✧) junto a ES / EN. PIN inicial: 2026.
+4. Abre una figura > Editar datos de la colección.
+5. Elige Regalo, un colaborador y Guardar cambios.
+6. Terminar > Descargar actualización. Envía el ZIP al adulto que publica.
+
+WHAT IS INCLUDED
+- English / Spanish editing controls following the current site language.
+- Existing product detail view with an additive Edit collection details button.
+- Acquisition method, optional date and notes, contributor assignments.
+- Add and rename contributors; optional assets/ avatar paths, initials fallback.
+- Updated contributor defaults from people.js and all 33 collection entries preserved.
+- Doctor Strange now ships with a local transparent alternate artwork asset.
+- Rocket vs Mega Man X and Wild Card now also ship with local alternate artwork assets.
+- The Ronin & B5-56 now also ships with a local alternate artwork asset.
+- Immediate local preview of cards, detail data, filters and contributor ranking.
+- Undo for the last 50 edits in this editing session.
+- Local draft autosave; Exit restores the published view and retains the draft.
+- JSON backup download and restore (also usable to move drafts between devices).
+- Draft review and ZIP export; draft is never cleared by exporting or sharing.
+- Optional native sharing only if the browser accepts the generated ZIP.
+- Version comparison and three-way reconciliation of older drafts.
+- Different values changed in both published data and a draft require a choice.
+- Web export checks for changes to data files while the tab was open.
+- A second tab changing the draft blocks writes/exports in the first tab.
+
+PUBLISHER HANDOFF
+An exported update ZIP contains:
+  people.js             Complete replacement data file
+  collection.js         Complete replacement data file
+  update-summary.json   Entries changed, before/after values, base version
+  draft-backup.json     Original base and edited data for recovery/comparison
+  READ-ME.txt           Publication instructions
+
+Review the changes and compare the base in draft-backup.json against the
+currently published data BEFORE replacing the two JS files. If the public
+collection changed after export, reopen the backup in the current editor
+and reconcile it instead of uploading an old full replacement blindly.
+Upload only people.js and collection.js (plus any avatar assets you prepared).
+Do not upload the backup or summary to the public repository.
+Wait for GitHub Pages publication, reload the page, and verify the result.
+When Pau reopens editing, matching published changes are reconciled with the
+retained draft; he can also explicitly discard the draft after publication.
+
+DRAFT RECOVERY
+Use the same browser/device to resume a local draft. Private browsing,
+clearing browser data, moving the local folder, or changing the site address
+may remove or separate browser storage. Download backups regularly. If
+storage is blocked or full, the editor displays a warning; changes remain in
+memory until you download a backup or leave the page.
+Restore accepts only the exported JSON backup, never executable JS.
+No automatic cross-device sync or automatic sending/publishing is claimed.
+For file:// use, reopen the updated package before reconciling; the browser
+cannot check server changes when no server is present.
+If a remote source check fails, download a backup and reload before exporting.
+
+AVATARS
+Your images stay under assets/owner/ and assets/gift-givers/ as before.
+Empty scaffold directories are included without images. A contributor's
+optional avatar path must be a relative assets/ path. Images are supplied
+separately by the publisher; new contributors can use initials indefinitely.
+
+BASELINE PRESERVATION
+collection.js, i18n.js and sources.json remain unchanged from the
+base data snapshot. people.js uses the updated contributor defaults supplied for V5.6.
+catalog.js adds a local alternateImageUrl only for Doctor Strange. index.html retains
+the editor script/style references introduced in V5. app.js keeps the data refresh
+bridge, render notifications and Other acquisition support, with the Universes rendering
+fixing sparse-card duplication and product images now preferring configured local
+alternates before falling back to remote artwork. The original product cards, spotlight,
+favicon, page title and view-switching navigation are retained. editor.css remains
+scoped to editor elements. styles.css keeps the original stylesheet first and carries
+the Universes-only presentation forward.
+
+All full source files are included. No external editor libraries or fonts.
+
+VERSION 5.3 — CONTRIBUTOR PRESENTATION
+Horizontal ranking rows with a colored rank panel, inline SVG crown for the
+first three positions, existing avatar, name, gift icon/count and arrow.
+No descriptions or visible "gifts linked" text. Zero-gift arrows are disabled.
+Rank order is derived from actual gifts, with the existing alphabetical tie
+break; searching retains the full-list rank. All editing controls remain.
+contributors.css contains the scoped presentation rules; styles.css is unchanged.
+No new image files or image dependencies. Add your existing assets/ folder.
+
+VERSION 5.4 — UNIVERSE CARD CAROUSELS
+Universes cards introduced a title, a continuously looping rail (then capped at five
+figures), and a separate bottom strip for owned and wishlist totals.
+The card remains the same single navigation target into the filtered Collection.
+Animation pauses on hover/focus and is disabled by reduced-motion preferences.
+The change is scoped to renderUniverses() in app.js and Universes-only rules in
+styles.css; collection cards, wishlist cards, contributors, editor and data stay intact.
+
+
+VERSION 5.5 — UNIVERSE CARD SPACING / SCALE REFINEMENT
+Fixes the title sitting against the rounded top edge by restoring the intended main-card
+top inset with the correct CSS specificity. Universe figures now use flexible widths, so
+one- and two-figure universes render larger while five-figure universes still fit cleanly.
+Figure artwork is also slightly enlarged for a more consistent visual presence. The bottom
+owned / wishlist strip, looping behavior, navigation target and all non-Universes views
+remain unchanged.
+
+
+VERSION 5.6 — FIXED UNIVERSE ARTWORK SCALE
+Universe carousel figures now use fixed-size slots instead of flexible slots. The visual
+scale therefore stays at the Dragon Ball reference size regardless of whether a universe
+has one item or many. Sparse universes repeat their own sequence only enough to keep the
+loop filled; larger universes keep every figure in the moving rail rather than shrinking
+items to fit a card width.
+
+Artwork authoring target for local replacements is 800 x 800 px WebP on a transparent
+canvas. Keep the subject centered and bottom-aligned with consistent transparent margins;
+do not bake a product box, opaque background or large empty border into replacement art.
+A reserved assets/alternates/ folder and its README are included for future replacements.
+
+
+VERSION 5.7 — SPARSE UNIVERSE DUPLICATION FIX + DOCTOR STRANGE ALTERNATE
+Universes with exactly one or two figures now render those real figures once in the
+initial visible state instead of visibly duplicating them to pad the rail. Figure slot
+size stays fixed at the V5.6 dimensions. Three-or-more-item universes keep the looping
+carousel behavior. Doctor Strange now includes a local transparent 800 x 800 WebP
+alternate at assets/alternates/doctor-strange-651.webp, wired through catalog.js via
+alternateImageUrl and loaded before the remote retailer JPG, with automatic fallback
+back to the remote image if the local file is missing or fails.
+
+
+VERSION 5.8 — PROVIDED ALTERNATES PACKAGED
+The provided Rocket vs Mega Man X and Wild Card source images are now packaged inside
+assets/alternates/ as local WebP alternates, normalized onto the project's 800 x 800
+transparent artwork canvas. catalog.js now links those alternates through
+alternateImageUrl for the rocket-megaman and wild-card-570 entries, while the V5.7
+Doctor Strange alternate remains in place. Product cards, details, spotlight usage and
+Universes rendering continue to prefer configured local alternates first and fall back
+to the remote imageUrl if a local alternate is missing or fails.
+
+
+VERSION 5.8.1 — ALTERNATE ARTWORK STANDARDIZATION PASS
+Wild Card and Rocket vs Mega Man X were reprocessed against an explicit normalized
+artwork template rather than only being placed onto an 800 x 800 canvas. Wild Card now
+matches the Doctor Strange single-figure template: 660 px subject height, centered, with
+the shared y=754 visual baseline. Rocket vs Mega Man X is treated as an intentional wide
+multipack: centered, baseline y=754, combined subject width capped at 700 px, with the
+source aspect ratio preserved. The light source background was removed again with edge
+decontamination to reduce white matte/fringe. Catalog links and V5.7 local-first/fallback
+loading behavior are unchanged.
+
+
+VERSION 5.8.2 — RONIN ALTERNATE PACKAGED
+The provided Ronin source image is now packaged inside assets/alternates/ as a local
+WebP alternate, normalized onto the project's 800 x 800 transparent artwork canvas and
+linked in catalog.js through alternateImageUrl for ronin-502. The earlier Doctor Strange,
+Rocket vs Mega Man X, and Wild Card alternates remain in place. Product cards, details,
+spotlight usage and Universes rendering continue to prefer configured local alternates
+first and fall back to the remote imageUrl if a local alternate is missing or fails.

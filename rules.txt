@@ -1,0 +1,186 @@
+
+1. ChatGPT Formatting Rules for My Tampermonkey Collapsible Script
+
+2. Heading Rules
+- Use only ## or ### markdown headings.
+- Headings MUST start with a number and a period followed by a space.
+
+Correct:
+## 1. Section Namen
+### 2. Another Section
+
+Incorrect:
+## Section Name
+## 1) Section Name
+## Step 1 - Section Name
+
+The format must strictly match:
+## 1. Example
+
+Do NOT:
+- Add emojis in headings
+- Add extra punctuation
+- Add trailing spaces
+- Add bold inside headings
+- Add decorative symbols
+
+Plain text only.
+
+3. When Giving Code
+- Each logical section must have its own numbered H2 heading.
+- The code block must appear directly under the heading.
+- No text between the heading and the code block unless necessary.
+- Use proper fenced code blocks with language labels.
+
+Example:
+## 1. HTML
+```html
+<!DOCTYPE html>
+<html>
+</html>
+```
+
+## 2. CSS
+```css
+body {
+    margin: 0;
+}
+```
+
+4. Multi File Projects
+If providing multiple files:
+## 1. index.html
+## 2. styles.css
+## 3. script.js
+
+5. Explanation Sections
+If explanation is required, it must also follow numbered heading format.
+
+Example:
+## 4. How It Works
+
+No unnumbered headings allowed.
+
+6. Never Use
+- Bullet-only section titles
+- Bold-only section titles
+- Emojis in headings
+- Horizontal rules as section separators
+- Non-numbered headings
+
+Everything must trigger this regex:
+^## \d+\. 
+
+7. Always Default To This Structure
+Even if I do not explicitly ask for it, if the answer contains structured sections or code, you must automatically use numbered H2 sections.
+
+8. Comment Preservation Rule
+Never leave out comments.
+If comments already exist in the code, never remove them where they must be.
+You can update comments.
+You can improve comments.
+You can add more comments.
+But never remove existing necessary comments.
+
+9. Full File Rule
+If you're gonna change more than two chunks of code in a file, then you will have to give me a copy-paste version of the full file.
+
+10. Blender Addon Packaging Rule
+For Blender add-on work, even if you change one single line, you must give me the whole updated add-on as a packaged zip file.
+You do not have to rewrite the whole add-on.
+You only change whatever needs to be changed.
+But the deliverable must always be the full installable zip.
+
+11. Quality Standard Rule
+We are aiming for the highest standard in Unreal Engine development mindset:
+- clean architecture
+- scalable logic
+- maintainable implementation
+- no lazy patchwork
+- no unnecessary duplication
+
+12. Zero Half Migration Rule
+No halfway migration is allowed.
+If logic is migrated from one workflow, mode, system, or UI path into another, the migration must be completed before shipping.
+
+Do NOT:
+- move only part of the behavior
+- expose only part of the UI
+- share only part of the logic and leave the rest behind
+- ship an intermediate state and call it done
+
+Migration is only complete when the target workflows behave correctly and consistently everywhere the migrated logic is supposed to apply.
+
+13. Completion First Rule
+Always aim for completion, not partial progress.
+Do not treat partial implementation as acceptable delivery.
+If the requested behavior is not fully available from the user point of view, then the task is not done.
+
+14. No Half Jobs Rule
+Never do half jobs.
+
+Never ship:
+- a backend fix without the matching UI if both are required
+- a UI fix without the matching logic if both are required
+- a partial workflow migration
+- a transitional state when the task was to complete an implementation
+
+15. Shared Logic Rule
+If two workflows should share the same behavior, the logic should be centralized and shared whenever reasonable.
+Do not duplicate logic across multiple places when it should be one shared implementation.
+Only keep differences that are truly workflow-specific.
+
+16. No Unrequested Behavior Changes Rule
+Do not introduce behavior changes that I did not ask for.
+Do not reinterpret the request into a smaller or different feature.
+Do not replace the requested workflow with a different one just because it is easier to implement.
+If a requested behavior exists in one place and I ask for it in another place, replicate that behavior correctly instead of inventing a new variation.
+
+17. Shipping Gate Rule
+Before shipping, verify:
+- the requested behavior is fully implemented
+- the migration is complete
+- the shared logic is actually shared where it should be
+- the UI and logic both match the request
+- nothing important is left in the middle
+
+If any of those are not true, the task is not ready to ship.
+
+
+18.Do not use Color.withOpacity() in Flutter/Dart code.
+
+Reason:
+withOpacity() is deprecated and should not be used because it can cause precision loss.
+
+Use:
+color.withValues(alpha: 0.50)
+
+Do not use:
+color.withOpacity(0.50)
+
+19.For Flutter UI primitive SVG assets, do not use SVG <style> blocks, CSS classes, or SVG filters.
+
+Use direct fill/stroke attributes on every SVG element.
+
+Keep the SVG white on transparent background, then tint it in Flutter with ColorFilter.mode(..., BlendMode.srcIn).
+
+
+
+19. Correct Zip Rule Going Forward
+
+exclude:
+
+.git/
+build/
+.dart_tool/
+.idea/
+.vscode/   unless project-specific launch/settings are needed
+*.iml
+
+20. when delivering a zip file don't package the files into a parent folder unless required
+
+21.For Dart/Flutter code, never use __, ___, or other multiple-underscore placeholder parameters. Use _ for each unused callback parameter instead. If the parameter is used, give it a meaningful name.
+
+This avoids the Dart analyzer warning:
+
+unnecessary_underscores → “Try using _.”

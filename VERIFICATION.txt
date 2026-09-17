@@ -1,0 +1,102 @@
+V5 verification
+
+Passed: JavaScript syntax checks for all shipped scripts and exported data.
+Passed: local draft logic tests using a simulated DOM: gift assignment form,
+contributor creation and rename, stable links, undo, preview isolation, draft
+persistence, ZIP creation, invalid input rejection, older-draft reconciliation,
+explicit conflict choices, backup/reset/restore.
+Passed: generated ZIP CRCs and its complete people.js and collection.js contents.
+Passed: byte-for-byte preservation of original styles.css, catalog.js, people.js,
+collection.js, i18n.js and sources.json.
+
+Not performed: rendered browser, mobile, accessibility and real-device native
+sharing checks. The runtime has no installed browser and the browser download
+failed. No claim of browser-tested visual layout is made. Remote product-image
+availability and user-supplied avatars were not verified.
+
+V5.1: passed contributor bulk assignment, reassignment, selective unlink and
+preservation of other contributors and acquisition notes. Both directions
+share the existing validated draft/undo/export path.
+
+V5.2: card-rendering checks passed for owned and wishlist items, standard and
+empty variants, gifted acquisitions, meaningful edition badges and HTML escaping.
+Bottom metadata/status markup and all other application files are unchanged.
+Only app.js contains an application-code change. No new rendered-browser check.
+
+V5.3: passed contributor rendering logic checks for real gift-based ordering,
+three inline crowns, icon/count-only visible labels, zero-gift disabled arrows,
+rank stability during search and Spanish rank labels. The full editor logic
+checks also passed, including assignment/reassignment/unlinking, undo, recovery,
+reconciliation and export. Other application/data files remain unchanged except
+app.js, the new contributors.css, and its stylesheet reference in index.html.
+Rendered desktop/mobile visual checks remain unverified in this environment.
+
+
+V5.4: passed JavaScript syntax checks, isolated renderUniverses() DOM-string checks
+against the shipped catalog/collection data, and CSS parser checks. Verified each
+rendered universe card has a title, two duplicated carousel groups for continuous
+looping, a separate owned / wishlist strip, one card-level navigation target and a
+reduced-motion fallback. Browser screenshot rendering could not be completed because
+the available headless Chromium process did not terminate reliably in this runtime.
+Collection, wishlist, contributor and editor data files were not changed for V5.4.
+
+
+V5.5: corrected the Universes title inset cascade: the legacy .universe-card span
+reset had higher specificity than .universe-card-main and was zeroing its intended
+top padding. The main inset now wins explicitly. Figure slots use flexible growth with
+a capped width plus a small artwork scale-up, making sparse universes visibly larger
+without crowding five-item rails. CSS parsing and JavaScript syntax checks passed. The attempted headless Chromium
+render did not terminate reliably in this runtime, so no rendered-browser visual check is
+claimed. Collection data and application behavior are unchanged.
+
+
+V5.6: replaced flexible Universes figure slots with fixed slot dimensions matching the
+previous Dragon Ball scale. The carousel now uses intrinsic-width duplicated groups, so
+item count no longer changes figure width; sparse universes repeat to a minimum four-slot
+rail and universes with more items keep the entire figure list. The user-supplied people.js
+defaults are included, adding Mily while preserving the existing owner/contributors.
+Added assets/alternates/README.txt with the 800 x 800 transparent WebP authoring spec.
+JavaScript syntax, CSS parsing, package structure and data/count checks are recorded below.
+V5.6 checks completed in this runtime: node --check passed for every shipped JS file;
+CSS parsed without stylesheet errors; the shipped 33 collection records resolve to 14
+universes; every universe rail length is at least its actual item count and at least four
+slots for seamless sparse looping; the V5.5 five-item slice is absent; desktop figure slots
+are fixed at 116 px wide / 158 px high; Mily is present in the updated people.js; excluded
+development/build directories are absent. No rendered-browser visual claim is made.
+
+
+V5.7: fixed the Universes sparse-card duplication bug by rendering one-item and
+two-item universes as static single-pass rails while preserving the V5.6 fixed artwork
+slot dimensions and the looping carousel for larger universes. Added a local Doctor
+Strange alternate artwork asset at assets/alternates/doctor-strange-651.webp, configured
+through catalog.js and loaded preferentially with remote fallback in app.js. In this
+runtime, JavaScript syntax checks passed for all shipped JS files; CSS parsing passed;
+the packaged Doctor Strange alternate WebP is 800 x 800 with transparency; and the ZIP
+layout remains flat at root with the assets/alternates/ file included. No rendered-browser
+visual claim is made.
+
+
+V5.8: packaged the two user-provided source images as local alternate assets for
+rocket-megaman and wild-card-570, converted to WebP and normalized to 800 x 800 while
+preserving transparency where available and removing the flat light background from the
+provided 2-pack image. catalog.js now links three alternates in total: Doctor Strange,
+Rocket vs Mega Man X, and Wild Card. JavaScript syntax checks passed for shipped JS
+files; the new alternate WebPs are 800 x 800; and the ZIP remains flat at root with the
+assets/alternates/ files included. No rendered-browser visual claim is made.
+
+
+V5.8.1: re-standardized the packaged Wild Card and Rocket vs Mega Man X alternates.
+Wild Card alpha bounds are 663 x 660 with baseline y=754; Doctor Strange remains
+525 x 660 with the same baseline. Rocket vs Mega Man X is normalized as a wide multipack
+with 700 px combined alpha width and baseline y=754. All three alternates remain 800 x 800
+transparent WebP files. Catalog alternateImageUrl mappings remain intact. JavaScript syntax
+checks and package-structure checks passed. No rendered-browser visual claim is made.
+
+
+V5.8.2: packaged the user-provided Ronin source image as a local alternate asset for
+ronin-502, converted to WebP and normalized to 800 x 800 while removing the flat light
+background into transparency. catalog.js now links four alternates in total: Doctor
+Strange, Rocket vs Mega Man X, Wild Card, and The Ronin & B5-56. JavaScript syntax
+checks passed for shipped JS files; the new Ronin alternate WebP is 800 x 800 with
+transparency; and the ZIP remains flat at root with the assets/alternates/ files
+included. No rendered-browser visual claim is made.

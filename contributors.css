@@ -1,0 +1,43 @@
+/* V5.3: presentation scoped to the contributor ranking, using existing avatars.
+   Product cards, owner spotlight, navigation and editor logic are unchanged. */
+#contributor-grid{grid-template-columns:minmax(0,1fr);gap:16px;max-width:920px;margin-inline:auto}
+#contributor-grid .contributor-row{--rank-ink:#586677;--rank-panel:#eaf0f6;--rank-wash:#f7fafd;display:grid;grid-template-columns:82px 176px minmax(0,1fr) 62px;min-height:172px;border-radius:22px;background:linear-gradient(110deg,var(--rank-wash),var(--surface));border:1px solid var(--line);overflow:hidden}
+#contributor-grid .contributor-row[data-rank="1"]{--rank-ink:#ad6800;--rank-panel:#ffe7a0;--rank-wash:#fff9e9}
+#contributor-grid .contributor-row[data-rank="2"]{--rank-ink:#7770b3;--rank-panel:#e3defb;--rank-wash:#f6f4ff}
+#contributor-grid .contributor-row[data-rank="3"]{--rank-ink:#b85221;--rank-panel:#ffdfcc;--rank-wash:#fff5ee}
+#contributor-grid .contributor-rank{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;align-self:stretch;background:linear-gradient(150deg,var(--rank-wash),var(--rank-panel));color:var(--rank-ink);font-size:44px;font-weight:900;letter-spacing:-1px;line-height:1;padding:18px 4px}
+#contributor-grid .contributor-crown{width:25px;height:25px;flex-shrink:0}
+#contributor-grid .contributor-portrait{min-height:172px;background:transparent;align-self:stretch}
+#contributor-grid .person-visual{min-height:172px}
+#contributor-grid .person-visual img{object-fit:contain;object-position:center bottom;filter:drop-shadow(0 6px 6px #00000016)}
+#contributor-grid .person-fallback{background:transparent;color:var(--rank-ink);font-size:64px}
+#contributor-grid .contributor-copy{padding:22px 16px 22px 24px;justify-content:center;gap:12px}
+#contributor-grid .contributor-copy h3{margin:0;font-size:30px;line-height:1.15;letter-spacing:-.8px;overflow-wrap:anywhere}
+#contributor-grid .contributor-count{display:flex;align-items:center;gap:9px;margin:0;color:var(--muted);font-size:20px;font-weight:700;line-height:1.2}
+#contributor-grid .contributor-count svg{width:21px;height:21px;flex-shrink:0}
+#contributor-grid .contributor-arrow{display:grid;place-items:center;align-self:center;justify-self:center;background:transparent;color:var(--rank-ink);border-radius:50%;width:44px;height:44px;padding:10px}
+#contributor-grid .contributor-arrow:hover:not(:disabled){background:var(--rank-panel);transform:translateX(2px)}
+#contributor-grid .contributor-arrow:disabled{opacity:.3;cursor:default}
+#contributor-grid .pau-editor-link{margin:0;max-width:100%;font-size:12px;padding:9px 12px}
+[data-theme=dark] #contributor-grid .contributor-row{--rank-ink:#bbccdc;--rank-panel:#303d48;--rank-wash:#252e35}
+[data-theme=dark] #contributor-grid .contributor-row[data-rank="1"]{--rank-ink:#f5cb64;--rank-panel:#514322;--rank-wash:#332e22}
+[data-theme=dark] #contributor-grid .contributor-row[data-rank="2"]{--rank-ink:#c8bdf5;--rank-panel:#413b5c;--rank-wash:#2e2b3c}
+[data-theme=dark] #contributor-grid .contributor-row[data-rank="3"]{--rank-ink:#f3b08a;--rank-panel:#55392b;--rank-wash:#362a24}
+@media(max-width:590px){
+ #contributor-grid{gap:12px}
+ #contributor-grid .contributor-row{grid-template-columns:48px 98px minmax(0,1fr) 38px;min-height:132px;border-radius:18px}
+ #contributor-grid .contributor-rank{font-size:34px;gap:7px;padding:14px 3px}
+ #contributor-grid .contributor-crown{width:20px;height:20px}
+ #contributor-grid .contributor-portrait,#contributor-grid .person-visual{min-height:132px}
+ #contributor-grid .person-fallback{font-size:40px}
+ #contributor-grid .contributor-copy{padding:16px 5px 16px 10px;gap:10px}
+ #contributor-grid .contributor-copy h3{font-size:21px;letter-spacing:-.5px}
+ #contributor-grid .contributor-count{font-size:17px;gap:7px}
+ #contributor-grid .contributor-count svg{width:18px;height:18px}
+ #contributor-grid .contributor-arrow{width:34px;height:44px;padding:7px}
+}
+@media(max-width:360px){
+ #contributor-grid .contributor-row{grid-template-columns:40px 78px minmax(0,1fr) 32px}
+ #contributor-grid .contributor-copy h3{font-size:19px}
+ #contributor-grid .contributor-arrow{width:30px}
+}
